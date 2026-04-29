@@ -33,9 +33,7 @@ export default function Footer() {
                 </div>
               )}
 
-              <span className="text-xl font-bold tracking-tight">
-                {siteConfig.siteName}
-              </span>
+             
             </div>
 
             <p className="text-sm opacity-80 leading-relaxed max-w-[280px]">
