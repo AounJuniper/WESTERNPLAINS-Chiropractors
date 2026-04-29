@@ -22,7 +22,7 @@ export default function Footer() {
                 <img
                   src={siteConfig.logo}
                   alt="logo"
-                  className="w-20 h-20 object-contain"
+                  className="w-24 h-24 md:w-28 md:h-28 object-contain"
                 />
               ) : (
                 <div
