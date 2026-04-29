@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 lg:pt-32 lg:pb-0 overflow-hidden bg-[#F9FBFA]"
+      className="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 lg:pt-32 overflow-hidden bg-[#F9FBFA]"
     >
       {/* Background Effects */}
       <motion.div
@@ -48,34 +48,42 @@ export default function Hero() {
               Experience advanced, neurologically-based chiropractic care designed to restore balance and unlock your body's potential for natural healing.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-6 sm:space-y-0 sm:space-x-8">
+            <a
+              href="#booking"
+              className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-brand-blue text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-[10px] md:text-[11px] hover:bg-brand-teal transition-all shadow-2xl flex items-center justify-center group"
+            >
+              Book Appointment
+              <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
 
-              <a
-                href="#booking"
-                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-brand-blue text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-[10px] md:text-[11px] hover:bg-brand-teal transition-all shadow-2xl flex items-center justify-center group"
-              >
-                Book Appointment
-                <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-
-            </div>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT IMAGE (FIXED FOR IPHONE + ALL DEVICES) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="flex-1 relative flex justify-center"
+            className="flex-1 relative flex justify-center w-full"
           >
-            <div className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] aspect-[4/5] rounded-[40px] overflow-hidden border-8 border-white shadow-2xl">
+            <div
+              className="
+                relative w-full 
+                max-w-[340px] sm:max-w-[420px] lg:max-w-[520px]
+                
+                /* FIX FOR iPHONE */
+                h-[420px] sm:h-[520px] lg:h-[620px]
 
+                rounded-[30px] sm:rounded-[40px]
+                overflow-hidden 
+                border-4 sm:border-8 border-white 
+                shadow-2xl
+              "
+            >
               <img
                 src="https://images.squarespace-cdn.com/content/v1/638e0fffa08c6c660d9c95f9/8970254f-8a17-4f44-a8e2-d7a7d64b5401/WesternPlainsChiropractic-cutting-edge-techniques-Gillette.jpg?format=1000w"
                 alt="Clinical Session"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
-
             </div>
 
             {/* DOCTOR CARD (DYNAMIC) */}
@@ -89,7 +97,6 @@ export default function Hero() {
                 Board Certified
               </p>
 
-              {/* 👇 DYNAMIC DOCTOR NAME */}
               <p className="text-[12px] md:text-[14px] font-serif text-slate-800 mt-1">
                 {siteConfig.doctorName}
               </p>
